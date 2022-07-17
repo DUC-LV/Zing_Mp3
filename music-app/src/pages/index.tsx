@@ -3,8 +3,7 @@ import { Box, Flex } from "theme-ui";
 import ListMusic from "../container/ListMusic";
 import Slide from "../container/Slide";
 import SlideShow from "../container/SlideShow";
-import PlayMusic from "../pages/music/[slugMusic]";
-
+import PlayMusic from "../container/PlayMusic";
 const Home = () => {
 	const { getHome } = require("nhaccuatui-api-full");
 	const [dataHome, setDataHome] = useState<any>();
@@ -112,7 +111,22 @@ const Home = () => {
                     path="/video/[slugVideo]"
                     slug="slugVideo"
                 />
-				<ListMusic />
+				<ListMusic 
+					dataListMusicHome={dataHome?.song?.map((item: any) => {
+						if (item?.thumbnail == "") {
+						}
+						return {
+							image: item?.thumbnail,
+							title: item?.title,
+							key: item?.key,
+							artists: item?.artists?.[0].name,
+							duration: item?.duration,
+						};
+					})}
+					name="Danh Sách Bài Hát"
+                    path="/music/[slugMusic]"
+                    slug="slugMusic"
+				/>
 				<SlideShow
                     name="Chủ đề Hot"
                     dataSlider={dataHome?.topic?.map((item: any) => {

@@ -20,7 +20,7 @@ const Header = () => {
 			link: ""
 		},
 		{
-			id: 1,
+			id: 3,
 			name: "BXH NCT",
 			icon: <FiBarChart2 style={Object(iconHeaderStyle)} />,
 			link: ""

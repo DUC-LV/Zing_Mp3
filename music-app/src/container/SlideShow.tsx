@@ -30,7 +30,7 @@ const SlideShow = (props: DataSlide) => {
 			<Slider {...setting}>
 				{dataSlider?.map((item:any, index:any) => {
 					return(
-						<Box sx={{mt: "20px"}}>
+						<Box sx={{mt: "20px"}} key={index}>
 							{/* eslint-disable-next-line jsx-a11y/alt-text */}
 							<Image 
 								src={item?.image} 
